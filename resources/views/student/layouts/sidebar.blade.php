@@ -19,7 +19,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect">
+                    <a href="{{ route('view_id_card') }}" class="waves-effect" target="_blank">
                         <i class="bx bx-show"></i><span class="badge rounded-pill bg-info float-end"></span>
                         <span key="t-dashboards">View ID Card</span>
                     </a>
