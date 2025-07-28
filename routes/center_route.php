@@ -20,7 +20,7 @@ use App\Http\Controllers\center\AttendanceSheetController;
 Route::get('center/login', [AuthController::class, 'center_login'])->name('center_login');
 Route::post('center/login', [AuthController::class, 'center_login_now'])->name('center_login');
 
-Route::group(['prefix'=>'center', 'middleware'=>'center:center'], function(){
+Route::group(['prefix' => 'center', 'middleware' => 'center:center'], function () {
 	Route::get('dashboard', [AuthController::class, 'center_dashboard'])->name('center_dashboard');
 	Route::get('logout', [AuthController::class, 'center_logout'])->name('center_logout');
 
@@ -96,6 +96,10 @@ Route::group(['prefix'=>'center', 'middleware'=>'center:center'], function(){
 	// Profile Settings
 	Route::get('profile-update', [ProfileController::class, 'profile_update'])->name('profile_update');
 	Route::post('profile-update', [ProfileController::class, 'profile_update_now'])->name('profile_update');
+
+	// Change Password
+	Route::get('change-password', [ProfileController::class, 'change_password'])->name('change_password');
+	Route::post('change-password', [ProfileController::class, 'change_password_save'])->name('change_password_save');
 });
 Route::get('admin/center-recharge', [RechargeController::class, 'center_recharge_by_admin'])->name('center.recharge');
 Route::post('admin/center-recharge', [RechargeController::class, 'center_recharge_by_admin_now'])->name('center.recharge');
