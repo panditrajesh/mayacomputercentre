@@ -64,4 +64,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin:admin'], function () {
 	Route::post('income-and-expense', [IncomeExpenseController::class, 'income_expense_create'])->name('admin_income_expense_create');
 	Route::get('income-and-expense-delete/{id}', [IncomeExpenseController::class, 'income_expense_delete'])->name('admin_income_expense_delete');
 
+	// Change Password
+	Route::get('change-password', [AuthController::class, 'change_password'])->name('admin_change_password');
+	Route::post('change-password', [AuthController::class, 'change_password_save'])->name('admin_change_password_save');
+
 });
