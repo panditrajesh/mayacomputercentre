@@ -77,7 +77,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="{{ route('admin_profile_update') }}">
                         <i class="bx bx-user"></i>
                         <span key="t-layouts">Profile</span>
                     </a>

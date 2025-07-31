@@ -68,4 +68,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin:admin'], function () {
 	Route::get('change-password', [AuthController::class, 'change_password'])->name('admin_change_password');
 	Route::post('change-password', [AuthController::class, 'change_password_save'])->name('admin_change_password_save');
 
+	// Profile Settings
+	Route::get('profile-update', [AuthController::class, 'profile_update'])->name('admin_profile_update');
+	Route::post('profile-update', [AuthController::class, 'profile_update_now'])->name('admin_profile_update');
+
 });

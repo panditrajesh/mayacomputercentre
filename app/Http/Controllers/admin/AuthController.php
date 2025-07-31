@@ -65,4 +65,67 @@ class AuthController extends Controller
 
         return back()->with('success', 'Password Changed Successfully!');
     }
+
+
+    // public function profile_update()
+    // {
+    //     $data = Admin::where('al_id', Auth::guard('admin')->user()->al_id)->first();
+    //     return view('admin.profile_update', compact('data'));
+    // }
+
+    // public function profile_update_now(Request $request)
+    // {
+    //     $admin = Admin::where('cl_id', Auth::guard('admin')->user()->cl_id)->first();
+
+    //     if ($request->hasFile('admin_photo')):
+    //         $image = $request->file('admin_photo');
+    //         $file = time() . '_' . $image->getClientOriginalName();
+    //         $image->move('admin/admin_image', $file);
+    //         $data['cl_photo'] = $file;
+    //         $admin_photo = $file;
+    //     else:
+    //         $admin_photo = $admin->cl_photo;
+    //     endif;
+
+    //     if ($request->hasFile('admin_logo')):
+    //         $image = $request->file('admin_logo');
+    //         $file = time() . '_' . $image->getClientOriginalName();
+    //         $image->move('admin/admin_image', $file);
+    //         $data['cl_logo'] = $file;
+    //         $admin_logo = $file;
+    //     else:
+    //         $admin_logo = $admin->cl_logo;
+    //     endif;
+
+    //     if ($request->hasFile('admin_authorized_signature')):
+    //         $image = $request->file('admin_authorized_signature');
+    //         $file = time() . '_' . $image->getClientOriginalName();
+    //         $image->move('admin/admin_image', $file);
+    //         $data['cl_authorized_signature'] = $file;
+    //         $admin_authorized_signature = $file;
+    //     else:
+    //         $admin_authorized_signature = $admin->cl_logo;
+    //     endif;
+
+    //     $data = [
+    //         'cl_code' => $request->admin_code,
+    //         'cl_admin_name' => $request->admin_name,
+    //         'cl_director_name' => $request->director_name,
+    //         'cl_admin_address' => $request->address,
+    //         'cl_cin_no' => $request->cin_no,
+    //         'cl_email' => $request->email,
+    //         'cl_mobile' => $request->mobile,
+    //         'cl_photo' => $admin_photo,
+    //         'cl_logo' => $admin_logo,
+    //         'cl_authorized_signature' => $admin_authorized_signature,
+    //     ];
+
+    //     $update = Admin::where('cl_id', Auth::guard('admin')->user()->cl_id)->update($data);
+
+    //     if ($update):
+    //         return back()->with('success', 'Profile Updated Successfully!');
+    //     else:
+    //         return back()->with('success', 'Something Went Wrong!');
+    //     endif;
+    // }
 }
