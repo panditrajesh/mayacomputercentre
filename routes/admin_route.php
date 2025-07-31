@@ -12,17 +12,17 @@ use App\Http\Controllers\admin\IncomeExpenseController;
 Route::get('admin/login', [AuthController::class, 'admin_login'])->name('admin_login');
 Route::post('admin/login', [AuthController::class, 'admin_login_now'])->name('admin_login');
 
-Route::group(['prefix'=>'admin', 'middleware'=>'admin:admin'], function(){
+Route::group(['prefix' => 'admin', 'middleware' => 'admin:admin'], function () {
 	Route::get('dashboard', [AuthController::class, 'admin_dashboard'])->name('admin_dashboard');
 	Route::get('logout', [AuthController::class, 'admin_logout'])->name('admin_logout');
-	
+
 	// Center
 	Route::get('center-list', [CenterController::class, 'center_list'])->name('center_list');
 	Route::get('add-center', [CenterController::class, 'add_center'])->name('add_center');
-	Route::post('add-center', [CenterController::class, 'add_center_now'])->name('add_center'); 
+	Route::post('add-center', [CenterController::class, 'add_center_now'])->name('add_center');
 	Route::get('edit-center/{id}', [CenterController::class, 'edit_center'])->name('edit_center');
-	Route::post('edit-center/{id}', [CenterController::class, 'update_center'])->name('edit_center'); 
-	Route::get('delete-center/{id}', [CenterController::class, 'delete_center'])->name('delete_center'); 
+	Route::post('edit-center/{id}', [CenterController::class, 'update_center'])->name('edit_center');
+	Route::get('delete-center/{id}', [CenterController::class, 'delete_center'])->name('delete_center');
 	Route::get('center-account-status', [CenterController::class, 'center_status'])->name('center.status');
 	Route::get('center-certificate/{id}', [CenterController::class, 'center_certificate'])->name('view_center_certificate');
 
@@ -38,6 +38,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>'admin:admin'], function(){
 	Route::get('student-status-update', [StudentController::class, 'student_status_updated'])->name('student_status_updated');
 	Route::get('print-student-application/{id}', [StudentController::class, 'student_application'])->name('student_application_view');
 	Route::get('get-reg-no', [StudentController::class, 'get_reg_no'])->name('get_reg_no');
+	// view result
+	Route::get('student-result-list', [StudentController::class, 'student_result_list'])->name('student_result_view');
 
 	// Course
 	Route::get('course-list', [CourseController::class, 'course_list'])->name('course_list');
