@@ -1,4 +1,4 @@
-@extends('center.layouts.master')
+@extends('center.layouts.base')
 @section('title', 'Mark Attendance')
 @push('custom-css')
 <style type="text/css">

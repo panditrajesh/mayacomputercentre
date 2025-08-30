@@ -1,4 +1,4 @@
-@extends('center.layouts.master')
+@extends('center.layouts.base')
 @section('title', 'Dispatched Student List')
 @push('custom-css')
 	<style type="text/css">

@@ -1,4 +1,4 @@
-@extends('backend.layouts.master')
+@extends('center.layouts.base')
 @section('title', 'Profile')
 @push('custom-css')
 	<style type="text/css">
