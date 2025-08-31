@@ -1,101 +1,149 @@
-@extends('student.layouts.master')
+@extends('student.layouts.base')
 @section('title', 'Student Dashboard')
-@push('custom-css')
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Poppins', sans-serif;
-}
-body{
-background-color: #eee;
-}
-#student_view img{
-height: 150px;
-width: 150px;
-border: 8px solid #eee;
-position: absolute;
-left: 50%;
-top: 0;
-transform: translate(-50%,-50%);
-}
-.card{
-position:relative;
-width: 100%;
-border-radius: 5px;
-border: none;
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    background-color: #f5f7fa;
+    font-family: 'Poppins', sans-serif;
 }
-.name{
-font-size: 20px;
-margin-bottom: 6px;
-padding-top: 90px;
+
+/* Welcome Banner */
+.welcome-banner {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    border-radius: 16px;
+    padding: 30px;
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
-.job{
-color: #25fa25;
-font-size: 12px;
-font-weight: 700;
-margin-bottom: 8px;
+
+/* Profile Card */
+.card-profile {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    padding: 30px 20px;
+    text-align: center;
 }
-.container .card .icons .icon {
-font-size: 14px;
-width: 30px;
-height: 30px;
-color: white;
-background-color: #fa2525;
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
-cursor: pointer;
+
+.card-profile img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    margin-bottom: 15px;
 }
-.dis{
-color: #7e7c7c;
-line-height: 2;
+
+.card-profile h5 {
+    font-weight: 600;
+    margin-bottom: 5px;
 }
-.container .card:hover .icons .icon {
-background-color: #f06d6d;
+
+.badge-course {
+    font-size: 0.75rem;
+    background: #6f42c1;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 5px;
 }
-.container .card:hover .text-center{
-background-color:#fa2525;
-color: white;
+
+/* Info Table */
+.info-card {
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    background: #fff;
+    padding: 20px;
 }
-.container .card:hover .job,.container .card:hover .name{
-color: white;
+
+.student-info-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
 }
-.container .card:hover .dis{
-color: #c4c4c4;
+
+.student-info-table td {
+    padding: 12px 15px;
+    background: #f9f9fb;
+    border-radius: 8px;
 }
-.container .card .icons .icon:hover{
-background-color: rgb(235, 123, 103);
+
+.table-label {
+    font-weight: 600;
+    color: #333;
 }
-.mt-80{
-margin-top: 80px;
-}
-td{
-padding:4px;
-}
-tr:nth-child(even) {background-color: #f2f2f2;}
 </style>
-@endpush
+
 @section('content')
-<!-- start page title -->
-<div class="row">
-	<div class="col-12">
-		<div class="page-title-box d-sm-flex align-items-center justify-content-between">
-			<h4 class="mb-sm-0 font-size-18">Dashboard</h4>
-		</div>
-	</div>
+<div class="container-fluid mt-4">
+<div class="row mt-4 mb-4">
+    <div class="col-12">
+        <div class="card border-0 shadow-sm p-4 bg-primary text-white rounded-3">
+            <h2 class="fw-bold mb-1">👋 Welcome back, {{ Auth::user()->name ?? 'Admin' }}!</h2>
+            <p class="mb-0">Here’s a quick overview of your account at Maya Computer Center.</p>
+        </div>
+    </div>
 </div>
-<!-- end page title -->
-<div class="container-fluid">
-	<h3 align='center'> Welcome to Maya Computer Center</h3>
-	
-	
+    <div class="row justify-content-center">
+        <!-- Profile Card -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card-profile">
+                <img src="{{ asset('center/student_doc/'.$data->sl_photo ?? '') }}" alt="Student Photo">
+                <h5>{{ $data->sl_name }}</h5>
+                <p class="text-muted mb-1">{{ $data->sl_reg_no }}</p>
+                <span class="badge-course">{{ $data->c_short_name }}</span>
+                <p class="small mt-2">{{ $data->c_full_name }}</p>
+                <div class="mt-3 text-muted">
+                    <i class="fa fa-birthday-cake me-2 text-danger"></i> 13-Feb-1997
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Card -->
+        <div class="col-lg-8 col-md-6 mb-4">
+            <div class="info-card">
+                <h5 class="fw-bold mb-4">📋 Student Information</h5>
+                <table class="student-info-table">
+                    <tr>
+                        <td class="table-label">Mother's Name</td>
+                        <td>{{ $data->sl_mother_name }}</td>
+                    </tr>
+                    <tr>
+                        <td class="table-label">Father's Name</td>
+                        <td>{{ $data->sl_father_name }}</td>
+                    </tr>
+                    <tr>
+                        <td class="table-label">Course Title</td>
+                        <td>{{ $data->c_full_name }} ({{ $data->c_short_name }})</td>
+                    </tr>
+                    <tr>
+                        <td class="table-label">Course Duration</td>
+                        <td>{{ $data->c_duration }} Months</td>
+                    </tr>
+                    <tr>
+                        <td class="table-label">Center Code</td>
+                        <td>{{ $data->cl_code }}</td>
+                    </tr>
+                    <tr>
+                        <td class="table-label">Center Name</td>
+                        <td>{{ $data->cl_center_name }}</td>
+                    </tr>
+                    <tr>
+                        <td class="table-label">Center Address</td>
+                        <td>{{ $data->cl_center_address }}</td>
+                    </tr>
+                    <tr>
+                        <td class="table-label">Contact Number</td>
+                        <td>8825148127</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
-<!-- end row -->
-</div> <!-- container-fluid -->
-<!-- end row -->
 @endsection

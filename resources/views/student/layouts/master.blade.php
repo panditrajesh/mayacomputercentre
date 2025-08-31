@@ -65,8 +65,8 @@
         <!-- <body data-layout="horizontal" data-topbar="dark"> -->
         <!-- Begin page -->
         <div id="layout-wrapper">
-            @include('student.layouts.header')
-            @include('student.layouts.sidebar')
+            @include('center.layouts.header')
+            @include('center.layouts.sidebar')
             <div class="main-content">
                 <div class="page-content">
                     <div class="container-fluid">
@@ -88,7 +88,7 @@
                 </footer> 
             </div>
         </div>
-    @include('student.layouts.script')
+    @include('center.layouts.script')
     @stack('custom-js')
     </body>
     </html>

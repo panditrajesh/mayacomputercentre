@@ -7,13 +7,13 @@
     </div> 
 </div>
 <div class="row mt-4 mb-4">
-        <div class="col-12">
-            <div class="card border-0 shadow-sm p-4 bg-primary text-white rounded-3">
-                <h2 class="fw-bold mb-1">👋 Welcome back, {{ Auth::user()->name ?? 'Admin' }}!</h2>
-                <p class="mb-0">Here’s a quick overview of your platform today.</p>
-            </div>
+    <div class="col-12">
+        <div class="card border-0 shadow-sm p-4 bg-primary text-white rounded-3">
+            <h2 class="fw-bold mb-1">👋 Welcome back, {{ Auth::user()->name ?? 'Admin' }}!</h2>
+            <p class="mb-0">Here’s a quick overview of your platform today.</p>
         </div>
     </div>
+</div>
 <div class="row mt-3">
     
     <div class="col-12 col-sm-6 col-xl-3 mb-4">

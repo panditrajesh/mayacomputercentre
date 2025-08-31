@@ -19,7 +19,7 @@
          <link href="assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
         <link href="{{ asset('backend/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('backend/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('backend/assets/libs/select2/css/select2.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+
         <!-- Responsive datatable examples -->
         <link href="{{ asset('backend/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />  
         <!-- App Css-->
@@ -58,6 +58,22 @@
             .dataTables_wrapper{
                 overflow-x: scroll;
             }
+            .form-section-heading {
+                background: #74788d;
+                padding: 12px;
+                height: 44px;
+            }
+            .form-section-heading h5{
+                color: #fff;
+            }
+            .card-body input{
+                border-radius: 15px;
+                padding: 8px;
+            }
+            textarea{
+                border-radius: 14px !important;
+                height: 145px !important;
+            }
         </style>
         @stack('custom-css')
     </head>
@@ -65,8 +81,8 @@
         <!-- <body data-layout="horizontal" data-topbar="dark"> -->
         <!-- Begin page -->
         <div id="layout-wrapper">
-            @include('center.layouts.header')
-            @include('center.layouts.sidebar')
+            @include('admin.layouts.header')
+            @include('admin.layouts.sidebar')
             <div class="main-content">
                 <div class="page-content">
                     <div class="container-fluid">
@@ -88,7 +104,7 @@
                 </footer> 
             </div>
         </div>
-    @include('center.layouts.script')
+    @include('admin.layouts.script')
     @stack('custom-js')
     </body>
     </html>

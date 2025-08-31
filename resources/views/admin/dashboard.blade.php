@@ -1,173 +1,181 @@
-@extends('admin.layouts.master')
+@extends('admin.layouts.base')
 @section('title', 'Dashboard')
 @section('content')
-<!-- start page title -->
-<div class="row">
-	<div class="col-12">
-		<div class="page-title-box d-sm-flex align-items-center justify-content-between">
-			<h4 class="mb-sm-0 font-size-18">Dashboard</h4>
-		</div>
-	</div>
+<div class="contai px-4">
+    {{-- Welcome Message --}}
+    
+    </div> 
 </div>
-<!-- end page title -->
-<div class="row">
-	<div class="col-xl-4">
-		<div class="card overflow-hidden" style="height: 248px;">
-			<div class="bg-primary bg-soft">
-				<div class="row">
-					<div class="col-7">
-						<div class="text-primary p-3">
-							<h5 class="text-primary">Welcome Back !</h5>
-							<p>Your Profile</p>
-						</div>
-					</div>
-					<div class="col-5 align-self-end">
-						<img src="backend/assets/images/profile-img.png" alt="" class="img-fluid">
-					</div>
-				</div>
-			</div>
-			<div class="card-body pt-0">
-				<div class="row">
-					<div class="col-sm-4">
-						<div class="avatar-md profile-user-wid mb-4">
-							{{-- @if($data->al_photo)
-								<img src="{{ asset('admin/profile/').'/'.$data->al_photo }}" alt="" class="img-thumbnail rounded-circle">
-							@else
-								<img src="{{ asset('backend/assets/images/users/avatar-1.jpg') }}" alt="" class="img-thumbnail rounded-circle">
-							@endif --}}
-						</div>
-						<h5 class="font-size-15 text-truncate">{{ Auth::guard('admin')->user()->al_name }}</h5>
-						<p class="text-muted mb-0 text-truncate">Super Admin</p>
-					</div>
-					<div class="col-sm-8">
-						<div class="pt-4">
-							<div class="mt-4">
-								<a href="" class="btn btn-primary waves-effect waves-light btn-sm">View Profile <i class="mdi mdi-arrow-right ms-1"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-xl-8">
-		<div class="row">
-			<div class="col-md-4">
-				<div class="card mini-stats-wid" style="background: #50d5ff;">
-					<div class="card-body">
-						<div class="d-flex">
-							<div class="flex-grow-1">
-								<p class="text-muted fw-medium">Total User</p>
-								<h4 class="mb-0">1</h4>
-							</div>
-							<div class="flex-shrink-0 align-self-center">
-								<div class="mini-stat-icon avatar-sm rounded-circle bg-primary">
-									<span class="avatar-title">
-										<i class="bx bx-copy-alt font-size-24">2</i>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="card mini-stats-wid" style="background: #acc1ef;">
-					<div class="card-body">
-						<div class="d-flex">
-							<div class="flex-grow-1">
-								<p class="text-muted fw-medium">Total Volunteer</p>
-								<h4 class="mb-0">7</h4>
-							</div>
-							<div class="flex-shrink-0 align-self-center ">
-								<div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
-									<span class="avatar-title rounded-circle bg-primary">
-										<i class="bx bx-archive-in font-size-24"></i>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="card mini-stats-wid" style="background: #00faff;">
-					<div class="card-body">
-						<div class="d-flex">
-							<div class="flex-grow-1">
-								<p class="text-muted fw-medium">Gallery</p>
-								<h4 class="mb-0">10</h4>
-							</div>
-							<div class="flex-shrink-0 align-self-center">
-								<div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
-									<span class="avatar-title rounded-circle bg-primary">
-										<i class="bx bx-purchase-tag-alt font-size-24"></i>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="card mini-stats-wid" style="background: #b3e548;">
-					<div class="card-body">
-						<div class="d-flex">
-							<div class="flex-grow-1">
-								<p class="text-muted fw-medium">Total Cause</p>
-								<h4 class="mb-0">4</h4>
-							</div>
-							<div class="flex-shrink-0 align-self-center">
-								<div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
-									<span class="avatar-title rounded-circle bg-primary">
-										<i class="bx bx-purchase-tag-alt font-size-24"></i>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="card mini-stats-wid" style="background: #ff8989;">
-					<div class="card-body">
-						<div class="d-flex">
-							<div class="flex-grow-1">
-								<p class="text-muted fw-medium">Total Blog</p>
-								<h4 class="mb-0">8</h4>
-							</div>
-							<div class="flex-shrink-0 align-self-center">
-								<div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
-									<span class="avatar-title rounded-circle bg-primary">
-										<i class="bx bx-purchase-tag-alt font-size-24"></i>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="card mini-stats-wid" style="background: #fff;">
-					<div class="card-body">
-						<div class="d-flex">
-							<div class="flex-grow-1">
-								<p class="text-muted fw-medium">Total Contact</p>
-								<h4 class="mb-0">0</h4>
-							</div>
-							<div class="flex-shrink-0 align-self-center">
-								<div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
-									<span class="avatar-title rounded-circle bg-primary">
-										<i class="bx bx-purchase-tag-alt font-size-24"></i>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="row mt-4 mb-4">
+    <div class="col-12">
+        <div class="card border-0 shadow-sm p-4 bg-primary text-white rounded-3">
+            <h2 class="fw-bold mb-1">👋 Welcome back, {{ Auth::user()->name ?? 'Admin' }}!</h2>
+            <p class="mb-0">Here’s a quick overview of your platform today.</p>
+        </div>
+    </div>
 </div>
-<!-- end row -->
+<div class="row mt-3">
+    
+    <div class="col-12 col-sm-6 col-xl-3 mb-4">
+        <div class="card border-0 shadow">
+            <div class="card-body">
+                <div class="row d-block d-xl-flex align-items-center">
+                    <div
+                        class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                        <div class="icon-shape icon-shape-primary rounded me-4 me-sm-0">
+                            <svg class="icon" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="d-sm-none">
+                            <h2 class="h5">Student</h2>
+                            <h3 class="fw-extrabold mb-1"></h3>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-7 px-xl-0">
+                        <div class="d-none d-sm-block">
+                            <h2 class="h6 text-gray-400 mb-0">Student</h2>
+                            <h3 class="fw-extrabold mb-2">0</h3>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pending Student -->
+    <div class="col-12 col-sm-6 col-xl-3 mb-4">
+        <div class="card border-0 shadow">
+            <div class="card-body">
+                <div class="row d-block d-xl-flex align-items-center">
+                    <div
+                        class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                        <div class="icon-shape icon-shape-secondary rounded me-4 me-sm-0">
+                            <!-- Clock Icon for Pending -->
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M12 2.25a9.75 9.75 0 1 0 0 19.5 9.75 9.75 0 0 0 0-19.5zM12.75 7.5a.75.75 0 0 0-1.5 0v5.25c0 .2.08.39.22.53l3 3a.75.75 0 0 0 1.06-1.06l-2.78-2.78V7.5z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="d-sm-none">
+                            <h2 class="fw-extrabold h5">Pending Student</h2>
+                            <h3 class="mb-1">120</h3>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-7 px-xl-0">
+                        <div class="d-none d-sm-block">
+                            <h2 class="h6 text-gray-400 mb-0">Pending Student</h2>
+                            <h3 class="fw-extrabold mb-2">0</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Verified Student -->
+    <div class="col-12 col-sm-6 col-xl-3 mb-4">
+        <div class="card border-0 shadow">
+            <div class="card-body">
+                <div class="row d-block d-xl-flex align-items-center">
+                    <div
+                        class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                        <div class="icon-shape icon-shape-secondary rounded me-4 me-sm-0">
+                            <!-- Check Badge Icon for Verified -->
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M12 2.25a9.75 9.75 0 1 0 9.75 9.75A9.76 9.76 0 0 0 12 2.25zm4.28 8.03a.75.75 0 0 0-1.06-1.06l-3.47 3.47-1.47-1.47a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l4-4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="d-sm-none">
+                            <h2 class="fw-extrabold h5">Verified Student</h2>
+                            <h3 class="mb-1">350</h3>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-7 px-xl-0">
+                        <div class="d-none d-sm-block">
+                            <h2 class="h6 text-gray-400 mb-0">Verified Student</h2>
+                            <h3 class="fw-extrabold mb-2">0</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dispatched Student -->
+    <div class="col-12 col-sm-6 col-xl-3 mb-4">
+        <div class="card border-0 shadow">
+            <div class="card-body">
+                <div class="row d-block d-xl-flex align-items-center">
+                    <div
+                        class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                        <div class="icon-shape icon-shape-secondary rounded me-4 me-sm-0">
+                            <!-- Truck Icon for Dispatched -->
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M3 4.5A1.5 1.5 0 0 1 4.5 3h11.25a1.5 1.5 0 0 1 1.5 1.5V9h2.25a1.5 1.5 0 0 1 1.5 1.5v5.25a3.75 3.75 0 1 1-7.5 0H9.75a3.75 3.75 0 1 1-7.5 0V4.5zM6.75 18a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5zm10.5 0a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5z" />
+                            </svg>
+                        </div>
+                        <div class="d-sm-none">
+                            <h2 class="fw-extrabold h5">Dispatched Student</h2>
+                            <h3 class="mb-1">85</h3>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-7 px-xl-0">
+                        <div class="d-none d-sm-block">
+                            <h2 class="h6 text-gray-400 mb-0">Dispatched Student</h2>
+                            <h3 class="fw-extrabold mb-2">0</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-12 col-xl-8">
+        
+    </div>
+    <div class="col-12 col-xl-4">
+        <div class="col-12 px-0 mb-4">
+            <div class="card border-0 shadow">
+                <div class="card-header d-flex flex-row align-items-center flex-0 border-bottom">
+                    <div class="d-block">
+                        <div class="h6 fw-normal text-gray mb-2">Student Report</div>
+                        <h2 class="h3 fw-extrabold">452</h2>
+                        <div class="small mt-2">
+                            <span class="fas fa-angle-up text-success"></span>
+                            <span class="text-success fw-bold">18.2%</span>
+                        </div>
+                    </div>
+                    <div class="d-block ms-auto">
+                        <div class="d-flex align-items-center text-end mb-2">
+                            <span class="dot rounded-circle bg-gray-800 me-2"></span>
+                            <span class="fw-normal small">July</span>
+                        </div>
+                        <div class="d-flex align-items-center text-end">
+                            <span class="dot rounded-circle bg-secondary me-2"></span>
+                            <span class="fw-normal small">August</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body p-2">
+                    <div class="ct-chart-ranking ct-golden-section ct-series-a"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @endsection
